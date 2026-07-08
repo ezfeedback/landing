@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export default function TryItYourself() {
   return (
-    <section className="py-20 bg-[#F8F9FA]">
+    <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#E5E7EB] shadow-sm flex flex-col md:flex-row items-center gap-10 md:gap-14">
+        <div className="bg-[#F8F9FA] rounded-3xl p-8 sm:p-12 border border-[#E5E7EB] shadow-sm flex flex-col md:flex-row items-center gap-10 md:gap-14">
 
           {/* Left Side: QR Code container */}
           <div className="flex flex-col items-center flex-shrink-0">
