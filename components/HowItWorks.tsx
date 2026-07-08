@@ -9,8 +9,8 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        <div className="space-y-24">
-          {/* Step 1 — Rating */}
+        <div className="space-y-24 md:space-y-0">
+           {/* Step 1 — Rating */}
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2 flex justify-center">
               <div className="premium-phone animate-float">
@@ -172,7 +172,7 @@ export default function HowItWorks() {
               <h3 className="text-2xl font-bold font-display text-[#202124] mb-3">AI writes, they pick &amp; post</h3>
               <p className="text-[#5F6368] leading-relaxed mb-4">Our AI generates multiple review styles — Regular, Hinglish, Detailed — so customers find one that sounds like them. One tap copies it to Google.</p>
               <div className="flex flex-wrap gap-2">
-                {['Regular','Hinglish 🇮🇳','Detailed','Quick Take'].map(s => (
+                {['Regular', 'Hinglish 🇮🇳', 'Detailed', 'Quick Take'].map(s => (
                   <span key={s} className="text-xs bg-[#F3F4F6] text-[#374151] px-3 py-1.5 rounded-full font-medium">{s}</span>
                 ))}
               </div>
