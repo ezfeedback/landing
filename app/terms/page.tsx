@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | EzFeedback',
+  description: 'Read the Terms of Service for EzFeedback to understand the rules and guidelines for using our review management platform.',
+}
 
 export default function TermsOfService() {
   return (

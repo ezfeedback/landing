@@ -11,11 +11,11 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ezfeedback.in'),
+  metadataBase: new URL('https://www.ezfeedback.in'),
   title: 'EzFeedback — Turn Happy Customers into Google Reviews',
   description:
     'Help your local business collect more authentic Google Reviews. Customers scan your QR code, AI generates a review, they post it on Google. Setup in 5 minutes.',
-  keywords: 'google reviews, qr code, review management, local business, AI reviews',
+  keywords: 'get more google reviews, google review qr code, google review stand, business review management, customer feedback tool, local business marketing, AI review assistant, google business ratings',
   manifest: '/manifest.json',
   robots: {
     index: true,
@@ -30,9 +30,6 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     title: 'EzFeedback',
-  },
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE', // Replace this with your actual Google Search Console code
   },
   openGraph: {
     title: 'EzFeedback — Turn Happy Customers into Google Reviews',

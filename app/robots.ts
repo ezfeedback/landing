@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ezfeedback.in/sitemap.xml',
+    sitemap: 'https://www.ezfeedback.in/sitemap.xml',
   }
 }

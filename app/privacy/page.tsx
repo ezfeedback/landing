@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | EzFeedback',
+  description: 'Read the privacy policy of EzFeedback to learn how we collect, protect, and handle your data.',
+}
 
 export default function PrivacyPolicy() {
   return (
