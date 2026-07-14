@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'How many QR codes can I create?',
-    a: 'Unlimited. You can create QR codes for every counter, table, or location inside your shop.',
+    a: 'You get 1 dynamic QR code per shop, which you can print unlimited times to place at every table, counter, or location inside your shop.',
   },
   {
     q: 'What languages are supported?',
