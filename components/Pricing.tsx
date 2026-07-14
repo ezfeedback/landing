@@ -8,7 +8,7 @@ export default function Pricing() {
       period: '/month',
       billed: 'Per shop, billed monthly',
       sub: '≈ ₹18/day per shop',
-      cta: 'Start free trial',
+      cta: 'Get started',
       highlight: false,
       popular: false,
     },
@@ -18,7 +18,7 @@ export default function Pricing() {
       period: '/year',
       billed: 'Per shop, billed annually',
       sub: '≈ ₹500/month (Save 10%)',
-      cta: 'Start free trial',
+      cta: 'Get started',
       highlight: true,
       popular: true,
     },
@@ -36,7 +36,7 @@ export default function Pricing() {
 
   const features = [
     'Unlimited feedback reviews',
-    'Unlimited QR codes per shop',
+    'Unlimited QR code prints',
     'AI review generation',
     'Custom review form builder',
     'Full analytics dashboard',
@@ -60,7 +60,7 @@ export default function Pricing() {
             <div
               key={plan.name}
               className={`rounded-3xl p-8 flex flex-col relative transition-all duration-200 border ${plan.highlight
-                ? 'bg-[#1a1f36] text-white border-[#2563EB] shadow-xl md:-translate-y-2'
+                ? 'bg-[#0A1128] text-white border-[#2563EB] shadow-xl md:-translate-y-2'
                 : 'bg-white text-[#202124] border-[#DADCE0] hover:shadow-md'
                 }`}
             >
@@ -101,17 +101,14 @@ export default function Pricing() {
 
               <Link
                 href="http://localhost:3001/register"
-                className={`block w-full text-center font-semibold py-3.5 rounded-xl transition-colors shadow-sm ${plan.highlight
-                  ? 'bg-[#2563EB] hover:bg-[#1d4ed8] text-white'
-                  : 'bg-[#1a1f36] hover:bg-[#2c334e] text-white'
-                  }`}
+                className={`block w-full text-center font-semibold py-3.5 rounded-xl transition-colors shadow-sm bg-[#2563EB] hover:bg-[#1d4ed8] text-white`}
               >
                 {plan.cta}
               </Link>
             </div>
           ))}
         </div>
-        <p className="text-xs text-[#5F6368] mt-8">No credit card required to start free trial</p>
+        <p className="text-xs text-[#5F6368] mt-8">Cancel or change your plan at any time</p>
       </div>
     </section>
   )
