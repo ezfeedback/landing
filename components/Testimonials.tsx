@@ -21,10 +21,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-[#1a1f36] text-white">
+    <section className="py-24 bg-[#0A1128] text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium text-[#4285F4] mb-3 uppercase tracking-wide">Real results</p>
+          <p className="text-sm font-medium text-[#2563EB] mb-3 uppercase tracking-wide">Real results</p>
           <h2 className="text-3xl sm:text-4xl font-bold font-display">What owners say</h2>
         </div>
 
@@ -38,7 +38,7 @@ export default function Testimonials() {
               </div>
               <p className="text-white/70 text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#4285F4] flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-9 h-9 rounded-full bg-[#2563EB] flex items-center justify-center text-white text-sm font-bold">
                   {t.name[0]}
                 </div>
                 <div>

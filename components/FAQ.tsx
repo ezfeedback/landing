@@ -30,7 +30,7 @@ export default function FAQ() {
     <section id="faq" className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium text-[#4285F4] mb-3 uppercase tracking-wide">FAQ</p>
+          <p className="text-sm font-medium text-[#2563EB] mb-3 uppercase tracking-wide">FAQ</p>
           <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#202124]">
             Common questions
           </h2>
@@ -40,7 +40,7 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <div key={i} className="bg-[#F8F9FA] rounded-2xl p-6 border border-[#DADCE0]/50">
               <h3 className="font-semibold text-[#202124] mb-3 flex items-start gap-2">
-                <span className="text-[#4285F4] mt-0.5 text-sm font-bold">Q</span>
+                <span className="text-[#2563EB] mt-0.5 text-sm font-bold">Q</span>
                 {faq.q}
               </h3>
               <p className="text-sm text-[#5F6368] leading-relaxed pl-5">{faq.a}</p>

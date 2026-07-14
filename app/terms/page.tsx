@@ -84,7 +84,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-xl font-bold font-display text-[#202124] mb-3">9. Contact Us</h2>
             <p className="leading-relaxed">
-              If you have any questions about these Terms, please contact us at: <a href="mailto:support@ezfeedback.in" className="text-[#4285F4] hover:underline">support@ezfeedback.in</a>.
+              If you have any questions about these Terms, please contact us at: <a href="mailto:support@ezfeedback.in" className="text-[#2563EB] hover:underline">support@ezfeedback.in</a>.
             </p>
           </section>
         </article>

@@ -4,27 +4,27 @@ export default function Pricing() {
   const plans = [
     {
       name: 'Monthly Plan',
-      price: '₹499',
+      price: '₹549',
       period: '/month',
       billed: 'Per shop, billed monthly',
-      sub: '≈ ₹16/day per shop',
+      sub: '≈ ₹18/day per shop',
       cta: 'Start free trial',
       highlight: false,
       popular: false,
     },
     {
       name: 'Yearly Plan',
-      price: '₹3,999',
+      price: '₹5,999',
       period: '/year',
       billed: 'Per shop, billed annually',
-      sub: '≈ ₹333/month (Save 33%)',
+      sub: '≈ ₹500/month (Save 10%)',
       cta: 'Start free trial',
       highlight: true,
       popular: true,
     },
     {
       name: 'Lifetime Plan',
-      price: '₹9,999',
+      price: '₹24,999',
       period: '',
       billed: 'Per shop, one-time payment',
       sub: 'Pay once, own forever',
@@ -47,7 +47,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-24 bg-[#F8F9FA]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-        <p className="text-sm font-medium text-[#4285F4] mb-3 uppercase tracking-wide">Pricing</p>
+        <p className="text-sm font-medium text-[#2563EB] mb-3 uppercase tracking-wide">Pricing</p>
         <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#202124] mb-4">
           Simple, honest pricing
         </h2>
@@ -59,14 +59,13 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-3xl p-8 flex flex-col relative transition-all duration-200 border ${
-                plan.highlight
-                  ? 'bg-[#1a1f36] text-white border-[#4285F4] shadow-xl md:-translate-y-2'
-                  : 'bg-white text-[#202124] border-[#DADCE0] hover:shadow-md'
-              }`}
+              className={`rounded-3xl p-8 flex flex-col relative transition-all duration-200 border ${plan.highlight
+                ? 'bg-[#1a1f36] text-white border-[#2563EB] shadow-xl md:-translate-y-2'
+                : 'bg-white text-[#202124] border-[#DADCE0] hover:shadow-md'
+                }`}
             >
               {plan.popular && (
-                <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#4285F4] text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                   Best Value
                 </span>
               )}
@@ -102,11 +101,10 @@ export default function Pricing() {
 
               <Link
                 href="http://localhost:3001/register"
-                className={`block w-full text-center font-semibold py-3.5 rounded-xl transition-colors shadow-sm ${
-                  plan.highlight
-                    ? 'bg-[#4285F4] hover:bg-[#1a73e8] text-white'
-                    : 'bg-[#1a1f36] hover:bg-[#2c334e] text-white'
-                }`}
+                className={`block w-full text-center font-semibold py-3.5 rounded-xl transition-colors shadow-sm ${plan.highlight
+                  ? 'bg-[#2563EB] hover:bg-[#1d4ed8] text-white'
+                  : 'bg-[#1a1f36] hover:bg-[#2c334e] text-white'
+                  }`}
               >
                 {plan.cta}
               </Link>

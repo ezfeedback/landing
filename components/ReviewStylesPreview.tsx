@@ -1,10 +1,10 @@
 const reviews = [
   {
     style: '✍️ Regular',
-    color: '#4285F4',
+    color: '#2563EB',
     name: 'Amit Sharma',
     avatar: 'AS',
-    avatarBg: 'from-[#4285F4] to-[#8AB4F8]',
+    avatarBg: 'from-[#2563EB] to-[#60a5fa]',
     role: 'Verified Customer',
     time: '2 hours ago',
     text: 'Best coffee in Ahmedabad! The cappuccino was perfect — rich flavour and smooth texture. Staff was super friendly and quick. Will definitely be coming back with friends!',
@@ -45,12 +45,12 @@ export default function ReviewStylesPreview() {
   return (
     <section className="py-24 bg-[#F8F9FA] relative overflow-hidden">
       {/* Soft background glow spots */}
-      <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-[#4285F4]/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-[#2563EB]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-[#34A853]/5 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-[#4285F4] mb-3 uppercase tracking-wide">
+          <p className="text-sm font-semibold text-[#2563EB] mb-3 uppercase tracking-wide">
             Smart AI Engine
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#202124] tracking-tight">

@@ -3,7 +3,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-24 bg-[#F8F9FA]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium text-[#4285F4] mb-3 uppercase tracking-wide">Three steps · Under a minute</p>
+          <p className="text-sm font-medium text-[#2563EB] mb-3 uppercase tracking-wide">Three steps · Under a minute</p>
           <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#202124]">
             How EzFeedback works
           </h2>
@@ -55,7 +55,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <div className="md:w-1/2 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 bg-[#4285F4]/10 text-[#4285F4] text-xs font-bold px-3 py-1 rounded-full mb-4">Step 1</div>
+              <div className="inline-flex items-center gap-2 bg-[#2563EB]/10 text-[#2563EB] text-xs font-bold px-3 py-1 rounded-full mb-4">Step 1</div>
               <h3 className="text-2xl font-bold font-display text-[#202124] mb-3">Customer scans &amp; rates</h3>
               <p className="text-[#5F6368] leading-relaxed">No app, no login. Customer scans your QR code, sees your business details, and rates their experience with a simple star tap.</p>
             </div>
