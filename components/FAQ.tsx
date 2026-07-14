@@ -1,3 +1,7 @@
+"use client"
+
+import { useState } from 'react'
+
 const faqs = [
   {
     q: 'Does EzFeedback submit reviews automatically?',
@@ -26,26 +30,61 @@ const faqs = [
 ]
 
 export default function FAQ() {
-  return (
-    <section id="faq" className="py-24 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <p className="text-sm font-medium text-[#2563EB] mb-3 uppercase tracking-wide">FAQ</p>
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#202124]">
-            Common questions
-          </h2>
-        </div>
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <div key={i} className="bg-[#F8F9FA] rounded-2xl p-6 border border-[#DADCE0]/50">
-              <h3 className="font-semibold text-[#202124] mb-3 flex items-start gap-2">
-                <span className="text-[#2563EB] mt-0.5 text-sm font-bold">Q</span>
-                {faq.q}
-              </h3>
-              <p className="text-sm text-[#5F6368] leading-relaxed pl-5">{faq.a}</p>
-            </div>
-          ))}
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
+  return (
+    <section id="faq" className="py-24 bg-white border-t border-[#DADCE0]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <div className="lg:col-span-5 text-left lg:sticky lg:top-24">
+            <span className="inline-block bg-[#2563EB]/10 text-[#2563EB] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+              FAQS
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#202124] leading-tight">
+              All Questions <br />
+              <span className="text-[#2563EB]">Answered</span>
+            </h2>
+          </div>
+
+          <div className="lg:col-span-7 space-y-4">
+            {faqs.map((faq, i) => {
+              const isOpen = openIndex === i
+              return (
+                <div 
+                  key={i} 
+                  className="bg-white border border-[#DADCE0] rounded-2xl overflow-hidden transition-all duration-200 shadow-sm"
+                >
+                  <button
+                    onClick={() => toggleFAQ(i)}
+                    className="w-full flex items-center justify-between text-left p-6 font-semibold text-[#202124] hover:text-[#2563EB] transition-colors focus:outline-none cursor-pointer"
+                  >
+                    <span className="pr-4">{faq.q}</span>
+                    <span className={`text-[#2563EB] transform transition-transform duration-200 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </button>
+                  
+                  <div 
+                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      isOpen ? 'max-h-[300px] pb-6 px-6 pt-0' : 'max-h-0'
+                    }`}
+                  >
+                    <p className="text-sm text-[#5F6368] leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
         </div>
       </div>
     </section>
