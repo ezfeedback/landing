@@ -27,7 +27,7 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-[#DADCE0]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <Image
             src={logoImg}
             alt="EzFeedback Logo"
@@ -36,7 +36,7 @@ export default function Nav() {
             className="h-8 w-auto"
             priority
           />
-        </Link>
+        </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-[#5F6368]">
           {renderLink('#how-it-works', 'How it works')}
           {renderLink('#features', 'Features')}
