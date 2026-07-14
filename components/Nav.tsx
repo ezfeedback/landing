@@ -1,8 +1,29 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import logoImg from '@/app/logo.webp'
 
 export default function Nav() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
+  const renderLink = (hash: string, label: string) => {
+    if (isHome) {
+      return (
+        <a href={hash} className="hover:text-[#2563EB] transition-colors">
+          {label}
+        </a>
+      )
+    }
+    return (
+      <Link href={`/${hash}`} className="hover:text-[#2563EB] transition-colors">
+        {label}
+      </Link>
+    )
+  }
+
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-[#DADCE0]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -17,10 +38,10 @@ export default function Nav() {
           />
         </Link>
         <div className="hidden md:flex items-center gap-8 text-sm text-[#5F6368]">
-          <Link href="/#how-it-works" className="hover:text-[#2563EB] transition-colors">How it works</Link>
-          <Link href="/#features" className="hover:text-[#2563EB] transition-colors">Features</Link>
-          <Link href="/#pricing" className="hover:text-[#2563EB] transition-colors">Pricing</Link>
-          <Link href="/#faq" className="hover:text-[#2563EB] transition-colors">FAQ</Link>
+          {renderLink('#how-it-works', 'How it works')}
+          {renderLink('#features', 'Features')}
+          {renderLink('#pricing', 'Pricing')}
+          {renderLink('#faq', 'FAQ')}
         </div>
         <div className="flex items-center gap-3">
           <Link

@@ -1,8 +1,29 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import logoImg from '@/app/logo.webp'
 
 export default function Footer() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
+  const renderLink = (hash: string, label: string) => {
+    if (isHome) {
+      return (
+        <a href={hash} className="hover:text-[#2563EB] transition-colors">
+          {label}
+        </a>
+      )
+    }
+    return (
+      <Link href={`/${hash}`} className="hover:text-[#2563EB] transition-colors">
+        {label}
+      </Link>
+    )
+  }
+
   return (
     <footer className="bg-[#F8F9FA] text-[#5F6368] border-t border-[#DADCE0] pt-16 pb-70 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
@@ -68,9 +89,9 @@ export default function Footer() {
             <div>
               <p className="font-semibold text-[#202124] mb-4">Product</p>
               <ul className="space-y-2.5">
-                <li><Link href="/#how-it-works" className="hover:text-[#2563EB] transition-colors">How it works</Link></li>
-                <li><Link href="/#features" className="hover:text-[#2563EB] transition-colors">Features</Link></li>
-                <li><Link href="/#pricing" className="hover:text-[#2563EB] transition-colors">Pricing</Link></li>
+                <li>{renderLink('#how-it-works', 'How it works')}</li>
+                <li>{renderLink('#features', 'Features')}</li>
+                <li>{renderLink('#pricing', 'Pricing')}</li>
               </ul>
             </div>
             <div>
