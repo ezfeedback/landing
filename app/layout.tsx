@@ -35,26 +35,26 @@ export const metadata: Metadata = {
     title: 'EzFeedback — Turn Happy Customers into Google Reviews',
     description: 'The easiest way to collect more Google Reviews for your local business.',
     type: 'website',
-    url: 'https://ezfeedback.in',
+    url: 'https://www.ezfeedback.in',
     siteName: 'EzFeedback',
     locale: 'en_US',
     images: [
       {
-        url: '/qr_code.png',
-        width: 1200,
-        height: 630,
-        alt: 'EzFeedback QR Code Stand Preview',
+        url: '/og-logo.png',
+        width: 512,
+        height: 512,
+        alt: 'EzFeedback Logo',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'EzFeedback — Turn Happy Customers into Google Reviews',
     description: 'The easiest way to collect more Google Reviews for your local business.',
-    images: ['/qr_code.png'],
+    images: ['/og-logo.png'],
   },
   alternates: {
-    canonical: 'https://ezfeedback.in',
+    canonical: 'https://www.ezfeedback.in',
   },
 }
 
