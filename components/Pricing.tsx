@@ -8,26 +8,38 @@ export default function Pricing() {
 
   const plans = [
     {
-      name: 'Free Plan',
-      price: '₹0',
-      period: '/month',
-      billed: '1 shop limit, free forever',
-      sub: 'Perfect to try out',
+      name: 'Starter Plan',
+      price: billingPeriod === 'monthly' ? '₹299' : '₹2,999',
+      period: billingPeriod === 'monthly' ? '/month' : '/year',
+      billed:
+        billingPeriod === 'monthly'
+          ? 'Per shop, billed monthly'
+          : 'Per shop, billed annually',
+      sub:
+        billingPeriod === 'monthly'
+          ? '≈ ₹10/day per shop'
+          : '₹250/month (Save 16%)',
       cta: 'Get started',
       highlight: false,
       popular: false,
-      isFree: true,
+      planKey: 'starter' as const,
     },
     {
       name: 'Pro Plan',
-      price: billingPeriod === 'monthly' ? '₹549' : '₹5,999',
+      price: billingPeriod === 'monthly' ? '₹599' : '₹6,499',
       period: billingPeriod === 'monthly' ? '/month' : '/year',
-      billed: billingPeriod === 'monthly' ? 'Per shop, billed monthly' : 'Per shop, billed annually',
-      sub: billingPeriod === 'monthly' ? '≈ ₹18/day per shop' : '≈ ₹500/month (Save 10%)',
+      billed:
+        billingPeriod === 'monthly'
+          ? 'Per shop, billed monthly'
+          : 'Per shop, billed annually',
+      sub:
+        billingPeriod === 'monthly'
+          ? '≈ ₹20/day per shop'
+          : '₹542/month (Save 10%)',
       cta: 'Get started',
       highlight: true,
       popular: true,
-      isFree: false,
+      planKey: 'pro' as const,
     },
     {
       name: 'Lifetime Plan',
@@ -38,18 +50,18 @@ export default function Pricing() {
       cta: 'Get lifetime access',
       highlight: false,
       popular: false,
-      isFree: false,
+      planKey: 'lifetime' as const,
     },
   ]
 
   const allFeatures = [
-    { name: 'Feedback reviews', free: '10/month', paid: 'Unlimited' },
-    { name: 'QR code prints', free: '1 print', paid: 'Unlimited' },
-    { name: 'Custom review form builder', free: true, paid: true },
-    { name: 'Google Review redirect', free: true, paid: true },
-    { name: 'AI review generation', free: false, paid: true },
-    { name: 'Full analytics dashboard', free: false, paid: true },
-    { name: 'Priority support', free: false, paid: true },
+    { name: 'Feedback reviews', starter: '100 total', pro: 'Unlimited', lifetime: 'Unlimited' },
+    { name: 'QR code prints', starter: 'Unlimited', pro: 'Unlimited', lifetime: 'Unlimited' },
+    { name: 'Custom review form builder', starter: true, pro: true, lifetime: true },
+    { name: 'Google Review redirect', starter: true, pro: true, lifetime: true },
+    { name: 'AI review generation', starter: true, pro: true, lifetime: true },
+    { name: 'Full analytics dashboard', starter: false, pro: true, lifetime: true },
+    { name: 'Priority support', starter: false, pro: true, lifetime: true },
   ]
 
   return (
@@ -74,9 +86,8 @@ export default function Pricing() {
             aria-label="Toggle billing period"
           >
             <div
-              className={`w-4.5 h-4.5 rounded-full bg-[#2563EB] shadow-sm transform transition-transform duration-200 ${
-                billingPeriod === 'yearly' ? 'translate-x-6' : 'translate-x-0'
-              }`}
+              className={`w-4.5 h-4.5 rounded-full bg-[#2563EB] shadow-sm transform transition-transform duration-200 ${billingPeriod === 'yearly' ? 'translate-x-6' : 'translate-x-0'
+                }`}
             />
           </button>
           <span className={`text-sm font-medium flex items-center gap-1.5 ${billingPeriod === 'yearly' ? 'text-[#202124]' : 'text-[#5F6368]'}`}>
@@ -91,11 +102,10 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-3xl p-8 flex flex-col relative transition-all duration-200 border ${
-                plan.highlight
-                  ? 'bg-[#0A1128] text-white border-[#2563EB] shadow-xl md:-translate-y-2'
-                  : 'bg-white text-[#202124] border-[#DADCE0] hover:shadow-md'
-              }`}
+              className={`rounded-3xl p-8 flex flex-col relative transition-all duration-200 border ${plan.highlight
+                ? 'bg-[#0A1128] text-white border-[#2563EB] shadow-xl md:-translate-y-2'
+                : 'bg-white text-[#202124] border-[#DADCE0] hover:shadow-md'
+                }`}
             >
               {plan.popular && (
                 <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
@@ -125,8 +135,8 @@ export default function Pricing() {
 
               <ul className="space-y-3 mb-8 text-sm text-left flex-grow">
                 {allFeatures.map((feat) => {
-                  const isIncluded = plan.isFree ? feat.free !== false : feat.paid !== false
-                  const val = plan.isFree ? feat.free : feat.paid
+                  const val = feat[plan.planKey]
+                  const isIncluded = val !== false
 
                   return (
                     <li key={feat.name} className="flex items-start gap-2.5">
@@ -143,7 +153,7 @@ export default function Pricing() {
                       ) : (
                         <>
                           <span className="text-gray-400/60 font-bold flex-shrink-0">✕</span>
-                          <span className="text-gray-400 line-through opacity-50">
+                          <span className="text-gray-400">
                             {feat.name}
                           </span>
                         </>
@@ -162,7 +172,7 @@ export default function Pricing() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-[#5F6368] mt-8">Cancel or change your plan at any time</p>
+        <p className="text-xs text-[#5F6368] mt-8">All prices in INR · One-time 30-day access</p>
       </div>
     </section>
   )
