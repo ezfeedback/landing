@@ -165,7 +165,7 @@ export default function Pricing() {
               </ul>
 
               <Link
-                href="http://localhost:3001/register"
+                href="#"
                 className="block w-full text-center font-semibold py-3.5 rounded-xl transition-colors shadow-sm bg-[#2563EB] hover:bg-[#1d4ed8] text-white"
               >
                 {plan.cta}
