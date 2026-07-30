@@ -59,6 +59,7 @@ export default function Pricing() {
     { name: 'QR code prints', starter: 'Unlimited', pro: 'Unlimited', lifetime: 'Unlimited' },
     { name: 'Custom review form builder', starter: true, pro: true, lifetime: true },
     { name: 'Google Review redirect', starter: true, pro: true, lifetime: true },
+    { name: '3 styles per session', starter: null, pro: null, lifetime: null },
     { name: 'AI review generation', starter: true, pro: true, lifetime: true },
     { name: 'Full analytics dashboard', starter: false, pro: true, lifetime: true },
     { name: 'Priority support', starter: false, pro: true, lifetime: true },
