@@ -1,60 +1,31 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import getPlans, { fetchPlansFromApi, BillingPeriod, ApiPlanItem } from '@/utils/Plan'
+
+interface Feature {
+  name: string
+  starter: string | boolean | null
+  pro: string | boolean | null
+  lifetime: string | boolean | null
+}
 
 export default function Pricing() {
-  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly')
+  const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>('monthly')
+  const [rawPlans, setRawPlans] = useState<ApiPlanItem[]>([])
 
-  const plans = [
-    {
-      name: 'Starter Plan',
-      price: billingPeriod === 'monthly' ? '₹299' : '₹2,999',
-      period: billingPeriod === 'monthly' ? '/month' : '/year',
-      billed:
-        billingPeriod === 'monthly'
-          ? 'Per shop, billed monthly'
-          : 'Per shop, billed annually',
-      sub:
-        billingPeriod === 'monthly'
-          ? '≈ ₹10/day per shop'
-          : '₹250/month (Save 16%)',
-      cta: 'Get started',
-      highlight: false,
-      popular: false,
-      planKey: 'starter' as const,
-    },
-    {
-      name: 'Pro Plan',
-      price: billingPeriod === 'monthly' ? '₹599' : '₹6,499',
-      period: billingPeriod === 'monthly' ? '/month' : '/year',
-      billed:
-        billingPeriod === 'monthly'
-          ? 'Per shop, billed monthly'
-          : 'Per shop, billed annually',
-      sub:
-        billingPeriod === 'monthly'
-          ? '≈ ₹20/day per shop'
-          : '₹542/month (Save 10%)',
-      cta: 'Get started',
-      highlight: true,
-      popular: true,
-      planKey: 'pro' as const,
-    },
-    {
-      name: 'Lifetime Plan',
-      price: '₹24,999',
-      period: '',
-      billed: 'Per shop, one-time payment',
-      sub: 'Pay once, own forever',
-      cta: 'Get lifetime access',
-      highlight: false,
-      popular: false,
-      planKey: 'lifetime' as const,
-    },
-  ]
+  useEffect(() => {
+    fetchPlansFromApi().then((data) => {
+      if (data && data.length > 0) {
+        setRawPlans(data)
+      }
+    })
+  }, [])
 
-  const allFeatures = [
+  const plans = getPlans(billingPeriod, rawPlans)
+
+  const allFeatures: Feature[] = [
     { name: 'Feedback reviews', starter: '100 total', pro: 'Unlimited', lifetime: 'Unlimited' },
     { name: 'QR code prints', starter: 'Unlimited', pro: 'Unlimited', lifetime: 'Unlimited' },
     { name: 'Custom review form builder', starter: true, pro: true, lifetime: true },
@@ -160,7 +131,7 @@ export default function Pricing() {
                         </>
                       )}
                     </li>
-                  )
+                  );
                 })}
               </ul>
 
