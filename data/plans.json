@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Starter Plan",
+    "planKey": "starter",
+    "highlight": false,
+    "popular": false,
+    "cta": "Get started",
+    "pricing": {
+      "monthly": {
+        "price": "₹299",
+        "period": "/month",
+        "billed": "Per shop, billed monthly",
+        "sub": "≈ ₹10/day per shop"
+      },
+      "yearly": {
+        "price": "₹2,999",
+        "period": "/year",
+        "billed": "Per shop, billed annually",
+        "sub": "₹250/month (Save 16%)"
+      }
+    }
+  },
+  {
+    "name": "Pro Plan",
+    "planKey": "pro",
+    "highlight": true,
+    "popular": true,
+    "cta": "Get started",
+    "pricing": {
+      "monthly": {
+        "price": "₹599",
+        "period": "/month",
+        "billed": "Per shop, billed monthly",
+        "sub": "≈ ₹20/day per shop"
+      },
+      "yearly": {
+        "price": "₹6,499",
+        "period": "/year",
+        "billed": "Per shop, billed annually",
+        "sub": "₹542/month (Save 10%)"
+      }
+    }
+  },
+  {
+    "name": "Lifetime Plan",
+    "planKey": "lifetime",
+    "highlight": false,
+    "popular": false,
+    "cta": "Get lifetime access",
+    "pricing": {
+      "monthly": {
+        "price": "₹24,999",
+        "period": "",
+        "billed": "Per shop, one-time payment",
+        "sub": "Pay once, own forever"
+      },
+      "yearly": {
+        "price": "₹24,999",
+        "period": "",
+        "billed": "Per shop, one-time payment",
+        "sub": "Pay once, own forever"
+      }
+    }
+  }
+]
