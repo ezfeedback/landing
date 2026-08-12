@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import getPlans, { fetchPlansFromApi, BillingPeriod, ApiPlanItem } from '@/utils/Plan'
+import plansData from "../data/plans.json"
 
 interface Feature {
   name: string
