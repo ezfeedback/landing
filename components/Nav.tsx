@@ -45,13 +45,13 @@ export default function Nav() {
         </div>
         <div className="flex items-center gap-3">
           <Link
-            href="http://localhost:3001/login"
+            href="https://dash.ezfeedback.in/login"
             className="text-sm text-[#5F6368] hover:text-[#202124] font-medium transition-colors hidden sm:block"
           >
             Sign in
           </Link>
           <Link
-            href="http://localhost:3001/register"
+            href="https://dash.ezfeedback.in/register"
             className="text-sm bg-[#2563EB] text-white font-medium px-4 py-2 rounded-xl hover:bg-[#1d4ed8] transition-colors"
           >
             Get started free

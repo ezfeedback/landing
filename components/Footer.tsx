@@ -97,8 +97,8 @@ export default function Footer() {
             <div>
               <p className="font-semibold text-[#202124] mb-4">Account</p>
               <ul className="space-y-2.5">
-                <li><Link href="http://localhost:3001/login" className="hover:text-[#2563EB] transition-colors">Sign in</Link></li>
-                <li><Link href="http://localhost:3001/register" className="hover:text-[#2563EB] transition-colors">Register</Link></li>
+                <li><Link href="https://dash.ezfeedback.in/login" className="hover:text-[#2563EB] transition-colors">Sign in</Link></li>
+                <li><Link href="https://dash.ezfeedback.in/register" className="hover:text-[#2563EB] transition-colors">Register</Link></li>
               </ul>
             </div>
             <div>
