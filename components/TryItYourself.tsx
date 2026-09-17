@@ -11,7 +11,7 @@ export default function TryItYourself() {
           <div className="flex flex-col items-center flex-shrink-0">
             <div className="bg-white p-5 rounded-3xl border border-[#E5E7EB] shadow-sm w-44 h-44 flex items-center justify-center">
               <Image
-                src="/qr_code.png"
+                src="/qr_code.webp"
                 alt="Demo QR Code"
                 width={140}
                 height={140}
@@ -32,11 +32,11 @@ export default function TryItYourself() {
               Scan and experience exactly what your customers see.
             </h2>
             <p className="text-sm text-[#5F6368] leading-relaxed mb-8 max-w-xl">
-              Live demo of Coffee Corner — rate your experience, answer the survey, watch 4 AI reviews appear. This is the exact flow your customers will go through.
+              Live demo of Coffee Corner — rate your experience, answer the survey, watch 3 AI reviews appear. This is the exact flow your customers will go through.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Link
-                href="http://localhost:3001/register"
+                href="https://dash.ezfeedback.in/register"
                 className="inline-flex items-center justify-center bg-[#1A1F36] hover:bg-[#2A2F46] text-white font-bold px-6 py-3 rounded-full text-sm transition-colors shadow-sm"
               >
                 Create free account →
