@@ -37,6 +37,7 @@ export default function TryItYourself() {
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Link
                 href="https://dash.ezfeedback.in/register"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-[#1A1F36] hover:bg-[#2A2F46] text-white font-bold px-6 py-3 rounded-full text-sm transition-colors shadow-sm"
               >
                 Create free account →

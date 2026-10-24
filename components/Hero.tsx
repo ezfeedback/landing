@@ -31,6 +31,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
               <Link
                 href="https://dash.ezfeedback.in/register"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-[#2563EB]/25 hover:shadow-xl hover:shadow-[#2563EB]/30 hover:-translate-y-0.5 text-base text-center"
               >
                 Start Now →

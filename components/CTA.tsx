@@ -11,7 +11,8 @@ export default function CTA() {
           Join 500+ local businesses. Setup takes less than 5 minutes.
         </p>
         <Link
-          href="http://localhost:3001/register"
+          href="https://dash.ezfeedback.in/register"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-white text-[#2563EB] font-bold px-10 py-4 rounded-2xl hover:bg-[#F8F9FA] transition-colors shadow-lg text-base"
         >
           Get started for free →

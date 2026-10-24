@@ -1,4 +1,3 @@
-# ─── Stage 1: Build ───────────────────────────────────────
 FROM node:20-alpine AS builder
 WORKDIR /app
 
@@ -8,15 +7,15 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# ─── Stage 2: Production ──────────────────────────────────
 FROM node:20-alpine
 WORKDIR /app
 
 ENV NODE_ENV=production
 
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+COPY --from=builder --chown=node:node /app/.next/standalone ./
+COPY --from=builder --chown=node:node /app/.next/static ./.next/static
+COPY --from=builder --chown=node:node /app/public ./public
 
+USER node
 EXPOSE 3001
 CMD ["node", "server.js"]
