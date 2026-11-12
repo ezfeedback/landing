@@ -17,7 +17,6 @@ export default function CTA() {
         >
           Get started for free →
         </Link>
-        <p className="text-white/40 text-sm mt-4">₹499/shop/month · No credit card required</p>
       </div>
     </section>
   )
